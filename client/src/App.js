@@ -11,7 +11,7 @@ const App = () => {
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
   };
-
+  console.log(savedList)
   return (
     <div>
       <SavedList list={savedList} />
@@ -19,7 +19,9 @@ const App = () => {
         <MovieList/>
       </Route>
       <Route path="/movies/:id">
-        <Movie/>
+        <Movie
+        addToSavedList={addToSavedList}
+        />
       </Route>
     </div>
   );

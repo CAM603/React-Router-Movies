@@ -8,7 +8,7 @@ import axios from 'axios';
 const Movie = (props) => {
   const [movie, setMovie] = useState();
   const { id } = useParams();
-  console.log(id)
+  
   
   useEffect(() => {
     
@@ -23,11 +23,11 @@ const Movie = (props) => {
 
   },[id]);
   
-  // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+  
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(movie)
+  }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -42,7 +42,7 @@ const Movie = (props) => {
       metascore={metascore}
       stars={stars}
       />
-      <div className="save-button">Save</div>
+      <div onClick={saveMovie} className="save-button">Save</div>
     </div>
   );
 }
