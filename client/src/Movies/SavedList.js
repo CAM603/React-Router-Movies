@@ -11,7 +11,7 @@ const SavedList = props => (
         </NavLink>
       
     ))}
-    <NavLink to="/">
+    <NavLink to="/movies">
       <div className="home-button">Home</div>
     </NavLink>
   </div>
